@@ -2,7 +2,6 @@ Usage
 The main Python file is named midnightclub3-mesh-tool.py. You can run it from your command line:
 
 bash
-Copiar
 python midnightclub3-mesh-tool.py
 How It Works
 File Selection:
