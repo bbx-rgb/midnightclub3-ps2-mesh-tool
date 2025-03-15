@@ -49,3 +49,30 @@ Global OBJ with Scaled Vertices and UVs:
 All vertex coordinates and UV mappings are divided by 256 before export.
 Individual OBJ Files with Scaled Data:
 Export each group individually with vertices and UVs divided by 256.
+
+Code Structure
+File Selection:
+escolher_arquivo() lists files and allows selection.
+
+Binary Processing:
+processar_arquivo() reads the file header, extracts the offset, pointers, and lists (PCK_INDEX, NAMELIST).
+
+Group and Mesh Extraction:
+processar_grupo(), processar_meshgroup(), and processar_mesh_entries() extract the data necessary to locate and define each mesh.
+
+Mesh Data Parsing:
+processar_mesh_data() scans each mesh for vertices, UVs, and flags using regular expressions.
+
+Face Generation:
+gerar_faces() creates triangular faces from a list of vertices while checking face flags.
+
+Scaling Functions:
+scale_vertices() and scale_uvs() divide vertex and UV values by 256 when required.
+
+Visualization and Export Functions:
+visualizar_global() displays the combined mesh with smooth shading and group colors, and exports it if a filename is provided.
+exportar_individualmente() exports each mesh group separately to a folder.
+
+Main Function:
+main() orchestrates the file selection, processing, and user menu for export/visualization options.
+
